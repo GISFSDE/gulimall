@@ -1,2 +1,2 @@
 # glmall
-A project about glmll.
+A project about glmall.
