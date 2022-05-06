@@ -1,2 +1,2 @@
-# glmail
-A project about glmail.
+# glmall
+A project about glmll.
