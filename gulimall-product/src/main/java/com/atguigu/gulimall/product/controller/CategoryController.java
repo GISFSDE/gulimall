@@ -1,6 +1,7 @@
 package com.atguigu.gulimall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
@@ -40,7 +41,15 @@ public class CategoryController {
 
         return R.ok().put("page", page);
     }
+    /**
+     * 列表
+     */
+    @RequestMapping("/list/tree")
+    public R listTree(){
+        List<CategoryEntity> entities= categoryService.listWithTree();
 
+        return R.ok().put("data", entities);
+    }
 
     /**
      * 信息
