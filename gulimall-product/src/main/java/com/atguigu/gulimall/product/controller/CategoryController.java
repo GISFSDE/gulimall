@@ -32,15 +32,15 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    /**
-     * 列表
-     */
-    @RequestMapping("/list")
-    public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = categoryService.queryPage(params);
-
-        return R.ok().put("page", page);
-    }
+//    /**
+//     * 列表
+//     */
+//    @RequestMapping("/list")
+//    public R list(@RequestParam Map<String, Object> params){
+//        PageUtils page = categoryService.queryPage(params);
+//
+//        return R.ok().put("page", page);
+//    }
     /**
      * 列表
      */
@@ -58,7 +58,7 @@ public class CategoryController {
     public R info(@PathVariable("catId") Long catId){
 		CategoryEntity category = categoryService.getById(catId);
 
-        return R.ok().put("category", category);
+        return R.ok().put("data", category);
     }
 
     /**
@@ -86,8 +86,8 @@ public class CategoryController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] catIds){
-		categoryService.removeByIds(Arrays.asList(catIds));
-
+//		categoryService.removeByIds(Arrays.asList(catIds));
+        categoryService.removeMenuByIds(Arrays.asList(catIds));
         return R.ok();
     }
 
