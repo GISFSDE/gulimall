@@ -2,6 +2,7 @@ package com.atguigu.gulimall.product.service.impl;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -65,6 +66,24 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
 
         baseMapper.deleteBatchIds(asList);
+    }
+
+    @Override
+    public Long[] findCatelogPath(Long catelogId) {
+        ArrayList<Long> paths = new ArrayList<>();
+        List<Long> parantPath = findParantPaths(catelogId, paths);
+        Collections.reverse(parantPath);
+        return  parantPath.toArray(new Long[parantPath.size()]);
+    }
+
+    private List<Long> findParantPaths(Long catelogId, List<Long> paths) {
+//        1.收集当前节点Id
+        paths.add(catelogId);
+        CategoryEntity byId = this.getById(catelogId);
+        if (byId.getParentCid() != 0) {
+            findParantPaths(byId.getParentCid(), paths);
+        }
+        return paths;
     }
 
     /**
