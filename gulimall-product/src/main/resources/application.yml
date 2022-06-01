@@ -1,4 +1,6 @@
 spring:
+  main:
+    allow-circular-references: true  #允许循环引用
   datasource:
     username: root
     password: root
