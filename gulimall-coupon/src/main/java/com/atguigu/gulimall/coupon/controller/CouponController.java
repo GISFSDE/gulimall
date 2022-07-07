@@ -26,7 +26,8 @@ import com.atguigu.common.utils.R;
  * @author lxl
  * @email 714416426@qq.com
  * @date 2022-05-09 19:01:41
- */
+
+ @RefreshScope 每次动态刷新的从nacos配置中心获取最新配置*/
 @RefreshScope
 @RestController
 @RequestMapping("coupon/coupon")

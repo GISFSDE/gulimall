@@ -5,6 +5,7 @@ spring:
 #        - id: baidu_route
 #          uri: https://www.baidu.com
 #          predicates:
+#        Query url参数
 #            - Query=url,baidu
 #
 #        - id: qq_route
