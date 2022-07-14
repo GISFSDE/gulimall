@@ -23,8 +23,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  *
  * 2、逻辑删除
  *  1）、配置全局的逻辑删除规则（省略）
- *  2）、配置逻辑删除的组件Bean（省略）
- *  3）、给Bean加上逻辑删除注解@TableLogic
+ *  2）、配置逻辑删除的组件Bean（3.1.1之后版本省略）
+ *  3）、给Bean加上逻辑删除注解@TableLogic 使用配置文件中配置，单个不同可自定义添加value和deval
  *
  * 3、JSR303
  *   1）、给Bean添加校验注解:javax.validation.constraints，并定义自己的message提示
@@ -55,7 +55,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @MapperScan("com.atguigu.gulimall.product.dao")
 @SpringBootApplication
 @EnableDiscoveryClient
-public class GulimallProductApplication {
+public class  GulimallProductApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(GulimallProductApplication.class, args);

@@ -28,7 +28,7 @@ import com.atguigu.common.utils.R;
  */
 @RestController
 @RequestMapping("product/category")
-public class CategoryController {
+public class  CategoryController {
     @Autowired
     private CategoryService categoryService;
 
@@ -95,6 +95,7 @@ public class CategoryController {
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] catIds){
 //		categoryService.removeByIds(Arrays.asList(catIds));
+
         categoryService.removeMenuByIds(Arrays.asList(catIds));
         return R.ok();
     }
