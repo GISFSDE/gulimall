@@ -10,11 +10,17 @@ spring:
         server-addr: 127.0.0.1:8848
   application:
     name: gulimall-ware
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
     db-config:
 #      主键自增
       id-type: auto
+
+logging:
+  level:
+    com.atguigu: debug
 server:
   port: 11000
