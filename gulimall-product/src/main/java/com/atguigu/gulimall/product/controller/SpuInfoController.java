@@ -31,7 +31,15 @@ import com.atguigu.common.utils.R;
 public class SpuInfoController {
     @Autowired
     private SpuInfoService spuInfoService;
-
+    /**
+     * 商品上架 /product/spuinfo/{spuId}/up
+     */
+    @RequestMapping("/{spuId}/up")
+    //@RequiresPermissions("product:spuinfo:list")
+    public R up(@PathVariable("spuId") Long spuId){
+        spuInfoService.up(spuId);
+        return R.ok();
+    }
     /**
      * 列表
      */
