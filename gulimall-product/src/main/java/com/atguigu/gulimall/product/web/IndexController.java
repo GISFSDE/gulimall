@@ -69,4 +69,13 @@ public class IndexController {
         Map<String, List<Catalog2VO>> map = categoryService.getCatalogJsonWithSpringCache();
         return map;
     }
+
+    @ResponseBody
+    @GetMapping("/hello")
+    public String hello() {
+
+        return "Hello";
+    }
+
+
 }
