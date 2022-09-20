@@ -40,5 +40,6 @@ public interface CategoryService extends IService<CategoryEntity> {
      * 使用SpringCache注解方式简化缓存设置
      */
     Map<String, List<Catalog2VO>> getCatalogJsonWithSpringCache();
+    Map<String, List<Catalog2VO>> getCatalogJson();
 }
 

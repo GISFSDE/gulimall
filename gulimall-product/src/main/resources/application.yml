@@ -1,6 +1,9 @@
 spring:
   thymeleaf:
     cache: false # 开发过程建议关闭缓存
+  redis:
+    host: 192.168.56.10
+    port: 6379
   main:
     allow-circular-references: true  #允许循环引用
   datasource:
@@ -34,4 +37,4 @@ server:
   port: 10000
 logging:
   level:
-    com.atguigu.gulimall: error
+    com.atguigu.gulimall: info

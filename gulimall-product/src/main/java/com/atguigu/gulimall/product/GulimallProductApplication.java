@@ -58,6 +58,13 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * 2）静态资源都放在static文件夹下就可以按照路径直接访问
  * 3）页面放在templates下直接访问，默认会找index
  * 4）热启动 引入dev-tools   ctrl+f9刷新
+ *
+ *
+ * 6、整合redis
+ * 1)、引入data-redis-starter
+ * 2)、简单配置redis的host等信息
+ * 3)、使用SpringBoot自动配置好的StringRedisTempLate来操作redis
+ * redis-》Map;存放数据key,数据值value
  */
 @EnableFeignClients(basePackages = "com.atguigu.gulimall.product.feign")
 @MapperScan("com.atguigu.gulimall.product.dao")
